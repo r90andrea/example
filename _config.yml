@@ -1,0 +1,25 @@
+title: example
+author: a90red
+email: a90red@gmail.com
+description: >
+  A simple project to get started with Jekyll.
+
+baseurl: '/example'
+
+include: ['_pages']
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+theme: minima
+
+# minima 2.X
+github_username: a90red
+twitter_username: a90red
+
+# minima >3.0
+# minima:
+#   social_links:
+#     twitter: a90red
+#     github: a90red

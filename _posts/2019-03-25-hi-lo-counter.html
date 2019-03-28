@@ -1,0 +1,60 @@
+---
+layout: post
+title:  'Hi-Lo counter tool'
+categories: [blackjack]
+tags: [strategy, calculator]
+excerpt_separator: <!--more-->
+---
+
+<div class='count'>
+	<form>
+		<div class='group'>
+			<label for='decks'>Number of decks:</label>
+			<select id='decks'>
+				<option value='8' selected>8 Deck</option>
+				<option value='7'>7 Decks</option>
+				<option value='6'>6 Decks</option>
+				<option value='5'>5 Decks</option>
+				<option value='4'>4 Decks</option>
+				<option value='3'>3 Decks</option>
+				<option value='2'>2 Decks</option>
+				<option value='1'>1 Decks</option>
+			</select>
+		</div>
+
+		<div class='group'>
+		    <input type='checkbox' id='blink' checked>
+		    <label for='blink'>Blink page background</label>
+		</div>
+	</form>
+
+	<ul>
+		<li>
+			<span class='key'>RUNNING</span>
+			<span class='value' id='running'>0</span>
+		</li>
+
+		<li>
+			<span class='key'>REAL</span>
+			<span class='value' id='real'>0</span>
+		</li>
+
+		<li>
+			<span class='key'>REMAINING</span>
+			<span class='value' id='remaining'>0</span>
+		</li>
+	</ul>
+
+	<div class='row'>
+		<button type='button' id='low' class='low'>LOW</button>
+		<button type='button' id='high' class='high'>HIGH</button>
+	</div>
+
+
+	<button type='button' id='mid' class='mid'>MID</button>
+</div>
+
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+
+<!-- <script src='{{ site.baseurl | prepend: site.url }}/assets/count.js'></script> -->
+<script src='{{ "/assets/count.js" | relative_url }}'></script>

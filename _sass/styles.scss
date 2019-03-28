@@ -1,0 +1,241 @@
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+/*
+ * Form
+ */
+
+form {
+	margin-bottom: 3rem;	
+}
+.group {
+	margin-bottom: 0.5rem;	
+}
+form label {
+	display: inline-block;
+	width: 15rem;
+}
+form select {
+	display: inline-block;
+	width: 20rem;
+	font-size: large;
+}
+@media screen and (max-width: 800px) {
+	form select {
+		width: 100%;
+	} 
+}
+input[type='checkbox'] {
+	font-size: large;
+}
+button {
+	padding: 1rem 2rem;
+	background: $action;
+	color: white;
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+}
+button:hover {
+	background: $action_hover;
+}
+.disabled {
+    color: $disable;
+}
+
+/*
+ * Table
+ */
+
+table, thead, tbody, tr, td, th {
+    color: black;
+    background: white;
+    border: thin solid black;
+    text-align: center;
+    margin: 0 !important;
+	padding: 0 !important;
+}
+tr, th, td {
+    height: 1.6rem;
+    line-height: 1.6rem;
+}
+th, td {
+    width: 8.33%;
+}
+th {
+    text-transform: uppercase;
+}
+th.head {
+    color: white;
+    background: $heading;
+    border: thin solid $heading_border;
+}
+td {
+    text-transform: lowercase;
+}
+td:first-child {
+    width: 16.66%;
+    text-transform: uppercase;
+}
+td:first-letter {
+    text-transform: uppercase;
+}
+td sup {
+    font-size: x-small;
+}
+td.odd {
+    background: $odd;
+    border-color: $odd_border;
+}
+td.even {
+    background: $even;
+    border-color: $even_border;
+}
+
+/*
+ * Action colors
+ */
+
+td.h {
+	background: $red;
+	border-color: $red_border;
+}
+td.s {
+	background: $yellow;
+	border-color: $yellow_border;
+}
+td.d, td.dh, td.ds {
+	background: $blue;
+	border-color: $blue_border;
+}
+td.dh {
+    background: shade($blue, $step * 0);
+    border-color: shade($blue_border, $step_border * 0);
+}
+td.ds {
+	background: shade($blue, $step * 1);
+    border-color: shade($blue_border, $step_border * 1);
+}
+td.y, td.yh, td.yd, td.ydh, td.ys {
+	background: $green;
+	border-color: $green_border;
+}
+td.yh {
+    background: shade($green, $step * 1);
+    border-color: shade($green_border, $step_border * 1);
+}
+td.yd, td.ydh {
+    background: shade($green, $step * 2);
+    border-color: shade($green_border, $step_border * 2);
+}
+td.ys {
+    background: shade($green, $step * 3);
+    border-color: shade($green_border, $step_border * 3);
+}
+td.r, td.rh, td.ry, td.rs {
+	background: $gray;
+	border-color: $gray_border;
+}
+td.rh {
+    background: shade($gray, $step * 0);
+    border-color: shade($gray_border, $step_border * 0);
+}
+td.ry {
+    background: shade($gray, $step * 1);
+    border-color: shade($gray_border, $step_border * 1);
+}
+td.rs {
+    background: shade($gray, $step * 2);
+    border-color: shade($gray_border, $step_border * 2);
+}
+
+/*
+ * Count
+ */
+
+.count ul {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.count ul {
+	list-style: none;
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+}
+.count li {
+	text-align: center;
+}
+@media screen and (max-width: 800px) {
+	.count ul {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+	.count li:last-child {
+		display: none;
+	}
+}
+.count li .key {
+	display: block;
+	color: white;
+	background: $heading;
+}
+.count li .value {
+	display: block;
+	font-size: 6rem;
+	font-weight: 200;
+	line-height: 12rem;
+}
+@media screen and (max-width: 800px) {
+	.count li .value {
+		display: block;
+		font-size: 4rem;
+		font-weight: 200;
+		line-height: 10rem;
+	}
+}
+
+.count .row {
+	display: block;
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+.count button {
+	display: block;
+	width: 100%;
+	height: 10rem;
+}
+.count .high {
+	background: $high;
+}
+.count .high:hover {
+	background: $high_hover;
+}
+.count .low {
+	background: $low;
+}
+.count .low:hover {
+	background: $low_hover;
+}
+.count .mid {
+	background: $mid;
+	display: block;
+	margin-top: 1rem;
+}
+.count .mid:hover {
+	background: $mid_hover;
+}
+
+.blink-low {
+	background: $blink_low;
+}
+.blink-high {
+	background: $blink_high;
+}
+.blink-mid {
+	background: $blink_mid;
+}

@@ -1,0 +1,74 @@
+---
+layout: post
+title:  'Basic strategy calculator'
+categories: [blackjack]
+tags: [strategy, calculator]
+excerpt_separator: <!--more-->
+---
+
+<div class='strategy'>
+	<form>
+		<div class='group'>
+			<label for='decks'>Number of decks:</label>
+			<select id='decks'>
+				<option value='4' selected>4 Decks or more</option>
+				<option value='2'>2 Decks</option>
+				<option value='1'>1 Deck</option>
+			</select>
+		</div>
+
+		<div class='group'>
+			<label for='soft17'>Dealer on Soft 17:</label>
+			<select id='soft17'>
+				<option value='stand' selected>Dealer Stands</option>
+				<option value='hit'>Dealer Hits</option>
+			</select>
+		</div>
+
+		<div class='group'>
+			<label for='peek'>Dealer Peek:</label>
+			<select id='peek'>
+				<option value='true' selected>Dealer peeks for Blackjack</option>
+				<option value='false'>No peek / No hole card (European)</option>
+			</select>
+		</div>
+
+		<div class='group'>
+		    <input type='checkbox' id='edit' checked>
+		    <label for='edit'>Edit action names</label>
+		</div>
+
+		<div class='group'>
+			<label for='double'>Double After Split:</label>
+			<select id='double'>
+				<option value='true' selected>Allowed</option>
+				<option value='false'>Not allowed</option>
+			</select>
+		</div>
+
+		<div class='group'>
+			<label for='surrender'>Surrender:</label>
+			<select id='surrender'>
+				<option value='no' selected>Not allowed</option>
+				<option value='any'>Allowed on any dealer card</option>
+				<option value='2to10'>Allowed on dealer 2 to 10</option>
+			</select>
+	    </div>
+	    
+	    <div class='group'>
+	        <button type='button'>Go!</button>
+	    </div>
+	</form>
+
+	<div>
+		<table id='strategy'></table>
+	</div>
+</div>
+
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+
+<!-- <script src='{{ site.baseurl | prepend: site.url }}/assets/data.js'></script> -->
+<script src='{{ "/assets/data.js" | relative_url }}'></script>
+
+<!-- <script src='{{ site.baseurl | prepend: site.url }}/assets/strategy.js'></script> -->
+<script src='{{ "/assets/strategy.js" | relative_url }}'></script>
