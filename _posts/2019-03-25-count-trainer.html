@@ -1,0 +1,82 @@
+---
+layout: post
+title:  'Card count trainer'
+categories: [blackjack]
+tags: [strategy, calculator]
+excerpt_separator: <!--more-->
+---
+
+<div class='trainer'>
+	<form>
+		<div class='group'>
+			<label for='decks'>Number of decks:</label>
+			<select id='decks'>
+				<option value='8' selected>8 Decks</option>
+				<option value='7'>7 Decks</option>
+				<option value='6'>6 Decks</option>
+				<option value='5'>5 Decks</option>
+				<option value='4'>4 Decks</option>
+				<option value='3'>3 Decks</option>
+				<option value='2'>2 Decks</option>
+				<option value='1'>1 Decks</option>
+			</select>
+		</div>
+
+		<div class='group'>
+		    <input type='checkbox' id='round' checked>
+		    <label for='round'>Round to the nearest half deck</label>
+		</div>
+
+		<div class='group'>
+		    <input type='checkbox' id='show'>
+		    <label for='show'>Show count</label>
+		</div>
+	</form>
+
+	<ul class='show-wrapper hidden'>
+		<li>
+			Running: <span id='show-running'></span>
+		</li>
+		<li>
+			Real: <span id='show-real'></span>
+		</li>
+		<li>
+			Left: <span id='show-left'></span>
+		</li>
+	</ul>
+
+	<ul>
+		<li>
+			<div class='key'>CARD</div>
+			<div class='value'>
+				<span id='card'>0</span>
+				<span id='suit'></span>
+			</div>
+		</li>
+	</ul>
+
+	<button type='button' id='next' class='block next'>NEXT</button>
+
+	<form>
+		<div class='group'>
+			<label for='guess'>Running count is:</label>
+	    	<input type='text' id='running' placeholder='0'>
+	    	<span class='answer'>&nbsp;</span>
+		</div>
+
+		<div class='group'>
+			<label for='guess'>Real count is:</label>
+	    	<input type='text' id='real' placeholder='0'>
+	    	<span class='answer'>&nbsp;</span>
+		</div>
+
+		<div class='group'>
+	        <button type='button' id='test'>Test!</button>
+	    </div>
+	</form>
+</div>
+
+<script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+
+<!-- <script src='{{ site.baseurl | prepend: site.url }}/assets/trainer.js'></script> -->
+<script src='{{ "/assets/trainer.js" | relative_url }}'></script>

@@ -61,5 +61,3 @@ $('#mid').bind('touchend', function(e) {
 	updateRunning(0);
   blink('mid');  
 });
-
-$('body')
